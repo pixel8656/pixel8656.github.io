@@ -1,0 +1,1543 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>快爽_视频频道_持续更新的高清原创内容平台</title>
+<meta name="description" content="快爽官方网站，专注快爽风格的原创高清视频内容社区，聚合创作者、专题企划与企业动态，构建值得信赖的内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Cpath d='M24 18 L48 32 L24 46 Z' fill='%23f97316'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ks-ink:#0f1420;
+  --ks-ink-2:#1b2233;
+  --ks-line:#e3e7ef;
+  --ks-soft:#f5f7fb;
+  --ks-accent:#f97316;
+  --ks-accent-2:#fbbf24;
+  --ks-blue:#2563eb;
+  --ks-green:#0f9d76;
+  --ks-text:#243044;
+  --ks-muted:#6b7689;
+  --ks-radius:16px;
+  --ks-shadow:0 10px 30px rgba(15,20,32,.08);
+  --ks-shadow-lg:0 20px 50px rgba(15,20,32,.14);
+  --ks-sticky-h:104px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--ks-sticky-h)}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  color:var(--ks-text);background:#fff;line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+ul{list-style:none}
+
+/* ---------- 吸顶区 ---------- */
+.ks-sticky-shell{position:sticky;top:0;z-index:80}
+.ks-ticker{
+  background:linear-gradient(90deg,#0f1420,#1f2a44 55%,#0f1420);
+  color:#e8edf7;font-size:13px;
+}
+.ks-ticker-inner{
+  max-width:1220px;margin:0 auto;padding:0 20px;height:36px;
+  display:flex;align-items:center;gap:14px;overflow:hidden;
+}
+.ks-ticker-badge{
+  flex:none;background:var(--ks-accent);color:#fff;font-size:11px;font-weight:700;
+  padding:2px 9px;border-radius:999px;letter-spacing:.5px;
+}
+.ks-ticker-track{flex:1;overflow:hidden;white-space:nowrap}
+.ks-ticker-track span{
+  display:inline-block;padding-left:100%;animation:ks-scroll 26s linear infinite;
+}
+.ks-ticker-track span b{color:var(--ks-accent-2);font-weight:600}
+.ks-ticker-track span em{font-style:normal;opacity:.55;margin:0 12px}
+@keyframes ks-scroll{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+
+.ks-header{background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--ks-line)}
+.ks-header-inner{
+  max-width:1220px;margin:0 auto;padding:0 20px;height:68px;
+  display:flex;align-items:center;gap:26px;
+}
+.ks-logo{display:flex;align-items:center;gap:10px;flex:none}
+.ks-logo-mark{
+  width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#f97316,#fbbf24);
+  display:grid;place-items:center;box-shadow:0 6px 16px rgba(249,115,22,.32);
+}
+.ks-logo-mark svg{width:17px;height:17px;fill:#fff}
+.ks-logo-text{display:flex;flex-direction:column;line-height:1.15}
+.ks-logo-text strong{font-size:19px;letter-spacing:1px;color:var(--ks-ink)}
+.ks-logo-text small{font-size:10px;color:var(--ks-muted);letter-spacing:2.4px;text-transform:uppercase}
+.ks-nav{display:flex;align-items:center;gap:4px;margin-left:6px}
+.ks-nav a{
+  font-size:14.5px;color:var(--ks-text);padding:8px 12px;border-radius:9px;
+  transition:background .2s,color .2s;white-space:nowrap;
+}
+.ks-nav a:hover{background:var(--ks-soft);color:var(--ks-accent)}
+.ks-search{
+  margin-left:auto;display:flex;align-items:center;gap:8px;
+  background:var(--ks-soft);border:1px solid var(--ks-line);border-radius:999px;
+  padding:6px 6px 6px 14px;min-width:238px;transition:border-color .2s,box-shadow .2s;
+}
+.ks-search:focus-within{border-color:var(--ks-accent);box-shadow:0 0 0 3px rgba(249,115,22,.12)}
+.ks-search input{border:none;background:none;outline:none;font-size:13.5px;width:100%;color:var(--ks-text)}
+.ks-search button{
+  flex:none;background:var(--ks-ink);color:#fff;font-size:13px;padding:6px 14px;border-radius:999px;
+  transition:background .2s;
+}
+.ks-search button:hover{background:var(--ks-accent)}
+.ks-menu-btn{display:none;width:40px;height:40px;border-radius:10px;background:var(--ks-soft);place-items:center}
+.ks-menu-btn span{display:block;width:18px;height:2px;background:var(--ks-ink);position:relative}
+.ks-menu-btn span::before,.ks-menu-btn span::after{
+  content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ks-ink);
+}
+.ks-menu-btn span::before{top:-6px}.ks-menu-btn span::after{top:6px}
+
+/* ---------- 首屏 ---------- */
+.ks-hero{
+  max-width:1220px;margin:0 auto;padding:56px 20px 40px;
+  display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;
+}
+.ks-hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;
+  color:var(--ks-accent);background:rgba(249,115,22,.1);padding:6px 14px;border-radius:999px;
+  letter-spacing:.5px;margin-bottom:20px;
+}
+.ks-hero-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ks-accent)}
+.ks-hero h1{
+  font-size:clamp(34px,4.6vw,54px);line-height:1.16;letter-spacing:-.5px;color:var(--ks-ink);
+  font-weight:800;
+}
+.ks-hero h1 em{
+  font-style:normal;background:linear-gradient(100deg,#f97316,#fbbf24);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.ks-hero-lead{
+  margin-top:20px;font-size:15.5px;color:var(--ks-muted);max-width:520px;
+}
+.ks-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.ks-btn{
+  display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;
+  padding:12px 24px;border-radius:12px;transition:transform .2s,box-shadow .2s,background .2s;
+}
+.ks-btn-primary{background:var(--ks-ink);color:#fff;box-shadow:0 10px 24px rgba(15,20,32,.22)}
+.ks-btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(15,20,32,.28)}
+.ks-btn-ghost{background:#fff;color:var(--ks-ink);border:1px solid var(--ks-line)}
+.ks-btn-ghost:hover{border-color:var(--ks-accent);color:var(--ks-accent)}
+.ks-hero-stats{display:flex;gap:34px;margin-top:38px;flex-wrap:wrap}
+.ks-hero-stats div strong{
+  display:block;font-size:26px;font-weight:800;color:var(--ks-ink);letter-spacing:-.5px;
+}
+.ks-hero-stats div span{font-size:12.5px;color:var(--ks-muted)}
+.ks-hero-visual{position:relative}
+.ks-hero-cover{
+  border-radius:22px;overflow:hidden;box-shadow:var(--ks-shadow-lg);position:relative;
+  aspect-ratio:16/11;background:#0f1420;
+}
+.ks-hero-cover img{width:100%;height:100%;object-fit:cover}
+.ks-hero-cover-tag{
+  position:absolute;left:16px;top:16px;background:rgba(15,20,32,.72);backdrop-filter:blur(6px);
+  color:#fff;font-size:12px;padding:5px 12px;border-radius:999px;
+}
+.ks-hero-cover-play{
+  position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;
+  background:rgba(255,255,255,.92);display:grid;place-items:center;
+  transition:transform .25s;box-shadow:0 8px 26px rgba(0,0,0,.3);
+}
+.ks-hero-cover-play svg{width:20px;height:20px;fill:var(--ks-accent);margin-left:3px}
+.ks-hero-cover:hover .ks-hero-cover-play{transform:scale(1.1)}
+.ks-hero-float{
+  position:absolute;right:-14px;bottom:-22px;background:#fff;border-radius:14px;
+  padding:12px 16px;box-shadow:var(--ks-shadow-lg);display:flex;align-items:center;gap:10px;
+  border:1px solid var(--ks-line);
+}
+.ks-hero-float .dot{width:8px;height:8px;border-radius:50%;background:var(--ks-green);box-shadow:0 0 0 4px rgba(15,157,118,.16)}
+.ks-hero-float small{font-size:12px;color:var(--ks-muted)}
+.ks-hero-float b{display:block;font-size:14px;color:var(--ks-ink)}
+
+/* ---------- 通用区块 ---------- */
+.ks-section{max-width:1220px;margin:0 auto;padding:64px 20px}
+.ks-section-alt{background:var(--ks-soft);max-width:none;padding:64px 0}
+.ks-section-alt > .ks-inner{max-width:1220px;margin:0 auto;padding:0 20px}
+.ks-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:32px;flex-wrap:wrap}
+.ks-head-txt h2{
+  font-size:clamp(24px,2.8vw,32px);font-weight:800;color:var(--ks-ink);letter-spacing:-.5px;
+}
+.ks-head-txt p{font-size:14.5px;color:var(--ks-muted);margin-top:8px;max-width:560px}
+.ks-head-more{font-size:13.5px;font-weight:600;color:var(--ks-accent);display:inline-flex;align-items:center;gap:6px}
+.ks-head-more::after{content:"→";transition:transform .2s}
+.ks-head-more:hover::after{transform:translateX(4px)}
+
+/* ---------- 焦点视频 ---------- */
+.ks-focus-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:22px}
+.ks-focus-main{
+  position:relative;border-radius:20px;overflow:hidden;min-height:380px;
+  box-shadow:var(--ks-shadow);background:#0f1420;
+}
+.ks-focus-main img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.ks-focus-main-body{
+  position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:28px;background:linear-gradient(180deg,rgba(15,20,32,0) 30%,rgba(15,20,32,.88));
+  color:#fff;
+}
+.ks-tag-pill{display:inline-block;font-size:11.5px;font-weight:600;padding:4px 11px;border-radius:999px;background:rgba(249,115,22,.92);color:#fff;margin-bottom:12px}
+.ks-focus-main-body h3{font-size:22px;line-height:1.35;font-weight:700}
+.ks-focus-main-body p{font-size:13.5px;opacity:.82;margin-top:8px}
+.ks-focus-meta{display:flex;align-items:center;gap:14px;margin-top:16px;font-size:12.5px;opacity:.85;flex-wrap:wrap}
+.ks-focus-side{display:grid;gap:18px}
+.ks-mini-card{
+  display:grid;grid-template-columns:132px 1fr;gap:14px;background:#fff;border:1px solid var(--ks-line);
+  border-radius:16px;padding:12px;transition:box-shadow .25s,transform .25s,border-color .25s;
+}
+.ks-mini-card:hover{transform:translateY(-3px);box-shadow:var(--ks-shadow);border-color:transparent}
+.ks-mini-thumb{border-radius:11px;overflow:hidden;aspect-ratio:16/9;position:relative;background:#e9edf5}
+.ks-mini-thumb img{width:100%;height:100%;object-fit:cover}
+.ks-mini-body h4{font-size:14.5px;line-height:1.45;color:var(--ks-ink);font-weight:600}
+.ks-mini-body p{font-size:12.5px;color:var(--ks-muted);margin-top:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ks-mini-meta{display:flex;gap:10px;font-size:11.5px;color:var(--ks-muted);margin-top:8px}
+
+/* ---------- 视频流 ---------- */
+.ks-filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.ks-chip{
+  font-size:13px;padding:7px 16px;border-radius:999px;background:#fff;border:1px solid var(--ks-line);
+  color:var(--ks-muted);transition:all .2s;
+}
+.ks-chip:hover{border-color:var(--ks-accent);color:var(--ks-accent)}
+.ks-chip.is-active{background:var(--ks-ink);border-color:var(--ks-ink);color:#fff}
+.ks-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ks-video-card{
+  background:#fff;border:1px solid var(--ks-line);border-radius:var(--ks-radius);overflow:hidden;
+  transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column;
+}
+.ks-video-card:hover{transform:translateY(-5px);box-shadow:var(--ks-shadow-lg);border-color:transparent}
+.ks-video-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#e9edf5}
+.ks-video-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.ks-video-card:hover .ks-video-thumb img{transform:scale(1.06)}
+.ks-video-thumb .ks-dur{
+  position:absolute;right:10px;bottom:10px;background:rgba(15,20,32,.78);color:#fff;
+  font-size:11px;padding:2px 8px;border-radius:6px;
+}
+.ks-video-thumb .ks-thumb-tag{
+  position:absolute;left:10px;top:10px;background:rgba(255,255,255,.92);color:var(--ks-ink);
+  font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;
+}
+.ks-video-body{padding:16px 16px 14px;display:flex;flex-direction:column;flex:1}
+.ks-video-body h3{font-size:15.5px;line-height:1.5;color:var(--ks-ink);font-weight:650}
+.ks-video-body p{font-size:13px;color:var(--ks-muted);margin-top:7px;flex:1}
+.ks-video-author{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ks-muted);margin-top:12px}
+.ks-avatar{
+  width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;
+  font-size:12px;font-weight:700;flex:none;
+}
+.ks-video-actions{display:flex;align-items:center;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--ks-line)}
+.ks-act-btn{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--ks-muted);transition:color .2s}
+.ks-act-btn:hover{color:var(--ks-accent)}
+.ks-act-btn svg{width:15px;height:15px;fill:currentColor;transition:transform .2s}
+.ks-act-btn.is-liked{color:var(--ks-accent)}
+.ks-act-btn.is-liked svg{transform:scale(1.15)}
+.ks-act-btn.is-saved{color:var(--ks-blue)}
+.ks-act-btn .ks-count{font-variant-numeric:tabular-nums}
+
+/* ---------- 专题 ---------- */
+.ks-topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.ks-topic-card{
+  position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/3.6;color:#fff;
+  box-shadow:var(--ks-shadow);transition:transform .3s;
+}
+.ks-topic-card:hover{transform:translateY(-6px)}
+.ks-topic-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ks-topic-body{
+  position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:20px;background:linear-gradient(180deg,rgba(15,20,32,.05) 35%,rgba(15,20,32,.9));
+}
+.ks-topic-body span{font-size:11px;letter-spacing:1px;text-transform:uppercase;opacity:.8}
+.ks-topic-body h3{font-size:17px;line-height:1.4;margin-top:6px;font-weight:700}
+.ks-topic-body p{font-size:12.5px;opacity:.78;margin-top:8px}
+.ks-topic-state{display:inline-block;margin-top:14px;font-size:11.5px;background:rgba(255,255,255,.18);padding:4px 11px;border-radius:999px;align-self:flex-start}
+
+/* ---------- 创作者 ---------- */
+.ks-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.ks-creator-card{
+  background:#fff;border:1px solid var(--ks-line);border-radius:var(--ks-radius);padding:22px 20px;
+  text-align:center;transition:transform .25s,box-shadow .25s,border-color .25s;
+}
+.ks-creator-card:hover{transform:translateY(-4px);box-shadow:var(--ks-shadow);border-color:transparent}
+.ks-creator-avatar{
+  width:64px;height:64px;border-radius:20px;margin:0 auto;display:grid;place-items:center;
+  color:#fff;font-size:22px;font-weight:800;letter-spacing:1px;
+}
+.ks-creator-card h3{font-size:15.5px;color:var(--ks-ink);margin-top:14px;font-weight:650}
+.ks-creator-field{font-size:12px;color:var(--ks-accent);margin-top:4px}
+.ks-creator-card p{font-size:12.5px;color:var(--ks-muted);margin-top:10px;min-height:56px}
+.ks-creator-stats{display:flex;justify-content:center;gap:20px;margin-top:12px;padding-top:12px;border-top:1px solid var(--ks-line)}
+.ks-creator-stats div{font-size:11.5px;color:var(--ks-muted)}
+.ks-creator-stats div b{display:block;font-size:15px;color:var(--ks-ink);font-weight:700}
+
+/* ---------- 评价 ---------- */
+.ks-review-track{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ks-review{
+  background:#fff;border-radius:var(--ks-radius);padding:22px;border:1px solid var(--ks-line);
+  display:flex;flex-direction:column;gap:12px;transition:box-shadow .25s,transform .25s;
+}
+.ks-review:hover{transform:translateY(-3px);box-shadow:var(--ks-shadow)}
+.ks-review-quote{font-size:20px;color:var(--ks-accent);line-height:1}
+.ks-review p{font-size:13.5px;color:var(--ks-text);line-height:1.8}
+.ks-review-who{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:12px;border-top:1px dashed var(--ks-line)}
+.ks-review-who b{font-size:13px;color:var(--ks-ink)}
+.ks-review-who small{font-size:11.5px;color:var(--ks-muted);display:block}
+.ks-stars{color:var(--ks-accent-2);font-size:12px;letter-spacing:1px}
+
+/* ---------- 故事随笔 ---------- */
+.ks-story-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+.ks-story-main{
+  border-radius:20px;overflow:hidden;position:relative;min-height:340px;
+  box-shadow:var(--ks-shadow);
+}
+.ks-story-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ks-story-main-body{
+  position:relative;z-index:2;height:100%;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;
+  background:linear-gradient(180deg,rgba(15,20,32,0) 30%,rgba(15,20,32,.9));color:#fff;
+}
+.ks-story-main-body h3{font-size:21px;font-weight:700;line-height:1.4}
+.ks-story-main-body p{font-size:13.5px;opacity:.82;margin-top:10px}
+.ks-story-list{display:grid;gap:16px}
+.ks-story-item{
+  background:#fff;border:1px solid var(--ks-line);border-radius:14px;padding:18px 20px;
+  display:flex;gap:14px;align-items:flex-start;transition:border-color .2s,box-shadow .2s;
+}
+.ks-story-item:hover{border-color:var(--ks-accent);box-shadow:var(--ks-shadow)}
+.ks-story-num{
+  font-size:20px;font-weight:800;color:var(--ks-line);flex:none;line-height:1;letter-spacing:-1px;
+}
+.ks-story-item h4{font-size:14.5px;color:var(--ks-ink);font-weight:650}
+.ks-story-item p{font-size:12.5px;color:var(--ks-muted);margin-top:5px}
+
+/* ---------- 深度解析 ---------- */
+.ks-about{display:grid;grid-template-columns:1fr 1.05fr;gap:52px;align-items:start}
+.ks-about h2{font-size:clamp(24px,2.8vw,32px);color:var(--ks-ink);font-weight:800;letter-spacing:-.5px;line-height:1.3}
+.ks-about-lead{font-size:14.5px;color:var(--ks-muted);margin-top:14px}
+.ks-about-points{margin-top:26px;display:grid;gap:16px}
+.ks-about-point{display:flex;gap:14px;align-items:flex-start}
+.ks-about-point .ico{
+  width:38px;height:38px;border-radius:11px;background:rgba(249,115,22,.1);color:var(--ks-accent);
+  display:grid;place-items:center;flex:none;font-weight:800;font-size:15px;
+}
+.ks-about-point h4{font-size:14.5px;color:var(--ks-ink);font-weight:650}
+.ks-about-point p{font-size:13px;color:var(--ks-muted);margin-top:3px}
+.ks-about-text{font-size:14.5px;color:var(--ks-text);line-height:1.95}
+.ks-about-text p{margin-bottom:16px}
+.ks-about-text strong{color:var(--ks-accent)}
+
+/* ---------- 动态 & FAQ ---------- */
+.ks-two-col{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
+.ks-timeline{position:relative;padding-left:22px}
+.ks-timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--ks-line)}
+.ks-tl-item{position:relative;padding-bottom:22px}
+.ks-tl-item::before{
+  content:"";position:absolute;left:-21px;top:7px;width:10px;height:10px;border-radius:50%;
+  background:var(--ks-accent);box-shadow:0 0 0 4px rgba(249,115,22,.15);
+}
+.ks-tl-item time{font-size:11.5px;color:var(--ks-accent);font-weight:600;letter-spacing:.5px}
+.ks-tl-item h4{font-size:14.5px;color:var(--ks-ink);margin-top:3px;font-weight:650}
+.ks-tl-item p{font-size:12.5px;color:var(--ks-muted);margin-top:3px}
+
+.ks-faq details{
+  border:1px solid var(--ks-line);border-radius:12px;margin-bottom:10px;background:#fff;
+  overflow:hidden;transition:border-color .2s;
+}
+.ks-faq details[open]{border-color:var(--ks-accent)}
+.ks-faq summary{
+  cursor:pointer;padding:15px 18px;font-size:14px;color:var(--ks-ink);font-weight:600;
+  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.ks-faq summary::-webkit-details-marker{display:none}
+.ks-faq summary::after{content:"+";font-size:18px;color:var(--ks-accent);font-weight:400;transition:transform .2s}
+.ks-faq details[open] summary::after{transform:rotate(45deg)}
+.ks-faq details p{padding:0 18px 16px;font-size:13px;color:var(--ks-muted);line-height:1.85}
+
+/* ---------- 合作 & 联系 ---------- */
+.ks-partner-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+.ks-partner{
+  padding:14px 26px;border:1px solid var(--ks-line);border-radius:12px;background:#fff;
+  font-size:14px;font-weight:600;color:var(--ks-ink);transition:all .2s;letter-spacing:.5px;
+}
+.ks-partner:hover{border-color:var(--ks-accent);color:var(--ks-accent);transform:translateY(-2px)}
+
+.ks-contact-box{
+  background:linear-gradient(135deg,#0f1420,#1e2a44);border-radius:22px;padding:38px;
+  color:#fff;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;
+  box-shadow:var(--ks-shadow-lg);
+}
+.ks-contact-box h2{font-size:26px;font-weight:800;letter-spacing:-.5px}
+.ks-contact-box p{font-size:13.5px;opacity:.72;margin-top:10px}
+.ks-contact-list{display:grid;gap:12px;font-size:13.5px}
+.ks-contact-list li{display:flex;gap:10px;align-items:center}
+.ks-contact-list span{opacity:.6;min-width:64px}
+.ks-contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.ks-btn-light{background:#fff;color:var(--ks-ink);font-size:13.5px;padding:10px 20px;border-radius:10px;font-weight:600;transition:transform .2s}
+.ks-btn-light:hover{transform:translateY(-2px)}
+.ks-btn-outline{border:1px solid rgba(255,255,255,.28);color:#fff;font-size:13.5px;padding:10px 20px;border-radius:10px;font-weight:600}
+.ks-btn-outline:hover{border-color:var(--ks-accent);color:var(--ks-accent-2)}
+
+/* ---------- 页脚 ---------- */
+.ks-footer{background:#0b0f18;color:#9aa4b6;padding:52px 0 26px;font-size:13.5px}
+.ks-footer-inner{max-width:1220px;margin:0 auto;padding:0 20px}
+.ks-footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.08)}
+.ks-footer-brand strong{color:#fff;font-size:17px;letter-spacing:1px}
+.ks-footer-brand p{margin-top:12px;line-height:1.85;font-size:12.5px;opacity:.72}
+.ks-footer h5{color:#fff;font-size:13.5px;margin-bottom:14px;font-weight:600}
+.ks-footer ul li{margin-bottom:9px;font-size:12.5px}
+.ks-footer ul li a:hover{color:var(--ks-accent-2)}
+.ks-footer-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;font-size:12px;opacity:.6}
+.ks-backtop{
+  position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:12px;
+  background:var(--ks-ink);color:#fff;display:grid;place-items:center;box-shadow:var(--ks-shadow-lg);
+  opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s;z-index:70;
+}
+.ks-backtop.is-show{opacity:1;visibility:visible;transform:translateY(0)}
+.ks-backtop svg{width:18px;height:18px;fill:#fff}
+
+/* ---------- Toast & Modal ---------- */
+.ks-toast{
+  position:fixed;left:50%;bottom:36px;transform:translate(-50%,20px);background:var(--ks-ink);
+  color:#fff;font-size:13.5px;padding:11px 22px;border-radius:10px;box-shadow:var(--ks-shadow-lg);
+  opacity:0;visibility:hidden;transition:all .3s;z-index:200;white-space:nowrap;
+}
+.ks-toast.is-show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.ks-modal-mask{
+  position:fixed;inset:0;background:rgba(11,15,24,.62);backdrop-filter:blur(3px);
+  display:flex;align-items:center;justify-content:center;padding:20px;z-index:150;
+  opacity:0;visibility:hidden;transition:all .25s;
+}
+.ks-modal-mask.is-show{opacity:1;visibility:visible}
+.ks-modal{
+  background:#fff;border-radius:18px;max-width:460px;width:100%;padding:28px;
+  transform:translateY(14px);transition:transform .25s;box-shadow:var(--ks-shadow-lg);
+}
+.ks-modal-mask.is-show .ks-modal{transform:translateY(0)}
+.ks-modal h3{font-size:18px;color:var(--ks-ink);font-weight:700}
+.ks-modal p{font-size:13.5px;color:var(--ks-muted);margin-top:10px;line-height:1.8}
+.ks-modal-close{float:right;font-size:20px;color:var(--ks-muted);line-height:1;margin-top:-6px}
+.ks-modal-field{margin-top:16px}
+.ks-modal-field label{font-size:12.5px;color:var(--ks-muted);display:block;margin-bottom:6px}
+.ks-modal-field input,.ks-modal-field textarea{
+  width:100%;border:1px solid var(--ks-line);border-radius:10px;padding:10px 13px;
+  font-size:13.5px;font-family:inherit;outline:none;transition:border-color .2s;resize:vertical;
+}
+.ks-modal-field input:focus,.ks-modal-field textarea:focus{border-color:var(--ks-accent)}
+.ks-modal-submit{
+  width:100%;margin-top:18px;background:var(--ks-ink);color:#fff;padding:12px;border-radius:10px;
+  font-size:14px;font-weight:600;transition:background .2s;
+}
+.ks-modal-submit:hover{background:var(--ks-accent)}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:1024px){
+  .ks-hero{grid-template-columns:1fr;gap:36px;padding-top:40px}
+  .ks-focus-grid{grid-template-columns:1fr}
+  .ks-video-grid{grid-template-columns:repeat(2,1fr)}
+  .ks-topic-grid{grid-template-columns:repeat(2,1fr)}
+  .ks-creator-grid{grid-template-columns:repeat(2,1fr)}
+  .ks-review-track{grid-template-columns:repeat(2,1fr)}
+  .ks-story-grid{grid-template-columns:1fr}
+  .ks-about{grid-template-columns:1fr;gap:32px}
+  .ks-two-col{grid-template-columns:1fr;gap:36px}
+  .ks-contact-box{grid-template-columns:1fr}
+  .ks-footer-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .ks-nav{
+    position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;align-items:stretch;
+    padding:10px 16px 16px;border-bottom:1px solid var(--ks-line);gap:2px;
+    display:none;box-shadow:var(--ks-shadow);
+  }
+  .ks-nav.is-open{display:flex}
+  .ks-nav a{padding:11px 12px}
+  .ks-menu-btn{display:grid}
+  .ks-search{order:3;margin-left:0;min-width:0;flex:1}
+  .ks-header-inner{flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:12px;gap:12px}
+  .ks-hero-stats{gap:22px}
+  .ks-video-grid{grid-template-columns:1fr}
+  .ks-topic-grid{grid-template-columns:1fr}
+  .ks-creator-grid{grid-template-columns:1fr}
+  .ks-review-track{grid-template-columns:1fr}
+  .ks-footer-top{grid-template-columns:1fr}
+  .ks-section{padding:46px 20px}
+  .ks-ticker-inner{font-size:12px}
+  .ks-contact-box{padding:26px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="ks-sticky-shell">
+  <div class="ks-ticker">
+    <div class="ks-ticker-inner">
+      <span class="ks-ticker-badge">最新</span>
+      <div class="ks-ticker-track">
+        <span>
+          <b>《快爽日常 Vol.07》</b> 今日 20:00 官方发布，聚焦创作幕后与剪辑思路
+          <em>·</em>
+          <b>冬季主题征集「爽感一秒」</b> 报名通道已开启
+          <em>·</em>
+          <b>创作者公开课第 12 期</b> 上传与调色攻略已更新
+          <em>·</em>
+          <b>企业动态</b> 内容生态合作计划新增三家伙伴
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <header class="ks-header">
+    <div class="ks-header-inner">
+      <a class="ks-logo" href="#ks-home" aria-label="快爽官方网站首页">
+        <span class="ks-logo-mark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3 L21 12 L6 21 Z"/></svg>
+        </span>
+        <span class="ks-logo-text">
+          <strong>快爽</strong>
+          <small>KUAISHUANG</small>
+        </span>
+      </a>
+      <nav class="ks-nav" id="ks-nav">
+        <a href="#ks-home">首页</a>
+        <a href="#ks-focus">视频焦点</a>
+        <a href="#ks-topics">专题企划</a>
+        <a href="#ks-creators">创作者</a>
+        <a href="#ks-stories">随笔</a>
+        <a href="#ks-news">企业动态</a>
+        <a href="#ks-contact">联系我们</a>
+      </nav>
+      <form class="ks-search" id="ks-search-form" role="search" onsubmit="return false;">
+        <input type="search" id="ks-search-input" placeholder="搜索视频、专题或创作者" aria-label="站内搜索">
+        <button type="submit">搜索</button>
+      </form>
+      <button class="ks-menu-btn" id="ks-menu-btn" aria-label="展开导航菜单" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+</div>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="ks-hero" id="ks-home">
+    <div class="ks-hero-copy">
+      <span class="ks-hero-eyebrow">官方网站 · 品牌直营内容生态</span>
+      <h1>快爽</h1>
+      <p class="ks-hero-lead">
+        作为深耕视频领域的品牌官网，快爽专注为创作者与企业搭建高品质内容生态。我们以原创、正版、高清为基石，让每一次快门都值得被认真对待。
+      </p>
+      <div class="ks-hero-actions">
+        <a class="ks-btn ks-btn-primary" href="#ks-focus">进入视频焦点</a>
+        <a class="ks-btn ks-btn-ghost" href="#ks-creators">认识创作者</a>
+      </div>
+      <div class="ks-hero-stats">
+        <div><strong>1,280+</strong><span>原创视频作品</span></div>
+        <div><strong>96.4%</strong><span>用户口碑好评</span></div>
+        <div><strong>320万</strong><span>社区月活跃人次</span></div>
+      </div>
+    </div>
+    <div class="ks-hero-visual">
+      <div class="ks-hero-cover">
+        <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 440'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f1420'/%3E%3Cstop offset='.55' stop-color='%232b2f52'/%3E%3Cstop offset='1' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3ClinearGradient id='g2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23fbbf24' stop-opacity='.9'/%3E%3Cstop offset='1' stop-color='%23f97316' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='440' fill='url(%23g1)'/%3E%3Ccircle cx='150' cy='110' r='120' fill='%23f97316' opacity='.22'/%3E%3Ccircle cx='520' cy='340' r='150' fill='%23fbbf24' opacity='.18'/%3E%3Cpath d='M0 330 Q160 250 320 320 T640 300 L640 440 L0 440 Z' fill='url(%23g2)'/%3E%3Crect x='410' y='80' width='150' height='96' rx='12' fill='%23ffffff' opacity='.14'/%3E%3Crect x='430' y='100' width='90' height='10' rx='5' fill='%23ffffff' opacity='.55'/%3E%3Crect x='430' y='122' width='60' height='10' rx='5' fill='%23ffffff' opacity='.32'/%3E%3Cpath d='M320 150 L400 220 L320 290 Z' fill='%23ffffff' opacity='.9'/%3E%3C/svg%3E" alt="快爽品牌形象主视觉，橙金渐变与品牌播放符号">
+        <span class="ks-hero-cover-tag">品牌主视觉 · 2026</span>
+        <span class="ks-hero-cover-play" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 5 L19 12 L8 19 Z"/></svg>
+        </span>
+      </div>
+      <div class="ks-hero-float">
+        <span class="dot"></span>
+        <div>
+          <b>本周更新 28 条</b>
+          <small>官方发布 · 持续运营中</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解析 -->
+  <section class="ks-section" id="ks-about">
+    <div class="ks-about">
+      <div>
+        <h2>关于快爽：一个把「爽感」做进内容生态的视频品牌</h2>
+        <p class="ks-about-lead">我们相信，好内容不是喧嚣，而是让人在某一瞬间真切地感到畅快。</p>
+        <div class="ks-about-points">
+          <div class="ks-about-point">
+            <span class="ico">A</span>
+            <div>
+              <h4>原创优先的内容体系</h4>
+              <p>从选题会到成片发布，快爽坚持原创链路可追溯，正版素材库与授权机制并行。</p>
+            </div>
+          </div>
+          <div class="ks-about-point">
+            <span class="ico">B</span>
+            <div>
+              <h4>创作者成长陪伴</h4>
+              <p>公开课、剪辑攻略、选题灵感与数据看板，帮助新创作者稳定走出第一步。</p>
+            </div>
+          </div>
+          <div class="ks-about-point">
+            <span class="ico">C</span>
+            <div>
+              <h4>企业级内容合作</h4>
+              <p>为品牌方提供专题企划、系列短片与联合出品，构建可持续的影响力资产。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ks-about-text">
+        <p>
+          快爽并不是一个只追逐热度的视频站点，而是一个围绕<strong>「爽感表达」</strong>持续运营的内容品牌。我们把镜头对准那些真实发生的、有力量的瞬间：一次骑行冲上坡顶的喘息、一锅刚出锅汤汁翻腾的声音、一段剪辑卡上节拍的快感、一次访谈中被说出口的坦然。这些瞬间构成了快爽的内容底色，也让「快爽」从一个名字，逐渐成为一个可以被识别、被信任的内容标签。
+        </p>
+        <p>
+          在产品层面，快爽官方网站提供清晰的视频焦点、专题企划、创作者矩阵与随笔板块。首页的焦点区每周更新，专题区按月推进，创作者区按季度孵化新人。我们希望用户在官网上获得的不只是浏览体验，更是一种「知道去哪里找好东西」的确定性——这正是<strong>用户首选</strong>四个字背后的实际含义。
+        </p>
+        <p>
+          在内容层面，我们坚持多元与包容。快爽的内容池里既有专业的拍摄教程与设备测评，也有普通人的日常记录与情绪短篇。我们不认为只有高成本制作才值得被看见，也不认为只有极致的爽感才配得上推荐位。相反，正是不同类型内容的并置，让整个内容生态更有弹性，也让更多创作者找到属于自己的位置。
+        </p>
+        <p>
+          在品牌层面，快爽把<strong>社会责任</strong>写进了运营规范：所有素材需完成版权确认，涉及真实人物的内容需取得授权，未成年人相关内容需额外审核。我们相信，一个值得信赖的视频平台，首先应该是一个对内容负责的平台。也正因如此，快爽在合作品牌与长期用户之间建立了稳定的口碑，这种口碑不是一次营销活动带来的，而是持续运营、持续打磨的结果。
+        </p>
+        <p>
+          如果你是一名创作者，欢迎把你的作品上传到快爽，参与我们定期举办的创意挑战与主题征集；如果你是一个品牌，欢迎联系我们共同策划专题内容，让品牌故事以更真实的方式被讲述；如果你只是路过，那么——欢迎停下来，看看这个社区正在发生什么。快爽的每一帧，都希望给你一次真诚的、酣畅的观看体验。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点视频 -->
+  <section class="ks-section-alt">
+    <div class="ks-inner" id="ks-focus">
+      <div class="ks-head">
+        <div class="ks-head-txt">
+          <h2>视频焦点</h2>
+          <p>本周最值得停留的六个镜头，由编辑部与社区共同推选。</p>
+        </div>
+        <a class="ks-head-more" href="#ks-videos">查看全部内容</a>
+      </div>
+      <div class="ks-focus-grid">
+        <article class="ks-focus-main">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 520'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230b1020'/%3E%3Cstop offset='.5' stop-color='%23213a6b'/%3E%3Cstop offset='1' stop-color='%232563eb'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='520' fill='url(%23f1)'/%3E%3Ccircle cx='650' cy='120' r='90' fill='%23f97316' opacity='.5'/%3E%3Ccircle cx='120' cy='430' r='130' fill='%232563eb' opacity='.35'/%3E%3Cpath d='M0 400 L200 300 L340 380 L520 260 L700 340 L800 290 L800 520 L0 520 Z' fill='%23ffffff' opacity='.1'/%3E%3Crect x='560' y='300' width='170' height='100' rx='14' fill='%23ffffff' opacity='.16'/%3E%3Ccircle cx='610' cy='350' r='20' fill='%23fbbf24' opacity='.85'/%3E%3C/svg%3E" alt="焦点视频《爽感一秒：城市夜骑的速度与呼吸》封面">
+          <div class="ks-focus-main-body">
+            <span class="ks-tag-pill">本周主推</span>
+            <h3>爽感一秒：城市夜骑的速度与呼吸</h3>
+            <p>跟拍三位夜骑者穿越城市高架，在城市灯火里寻找那口最畅快的呼吸。</p>
+            <div class="ks-focus-meta">
+              <span>作者 · 阿速</span>
+              <span>18.6 万播放</span>
+              <span>2026-11-17</span>
+            </div>
+          </div>
+        </article>
+        <div class="ks-focus-side">
+          <article class="ks-mini-card">
+            <div class="ks-mini-thumb"><img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Cdefs%3E%3ClinearGradient id='m1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f97316'/%3E%3Cstop offset='1' stop-color='%23fbbf24'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='180' fill='url(%23m1)'/%3E%3Ccircle cx='250' cy='50' r='46' fill='%23ffffff' opacity='.24'/%3E%3Cpath d='M0 140 L100 100 L200 150 L320 90 L320 180 L0 180 Z' fill='%23ffffff' opacity='.2'/%3E%3C/svg%3E" alt="视频《一锅汤的沸腾时刻》封面"></div>
+            <div class="ks-mini-body">
+              <h4>一锅汤的沸腾时刻</h4>
+              <p>从备料到出锅，用微距镜头记录汤汁翻滚的爽感。</p>
+              <div class="ks-mini-meta"><span>林见</span><span>9.2 万播放</span></div>
+            </div>
+          </article>
+          <article class="ks-mini-card">
+            <div class="ks-mini-thumb"><img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Cdefs%3E%3ClinearGradient id='m2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%230f9d76'/%3E%3Cstop offset='1' stop-color='%23a3e635'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='180' fill='url(%23m2)'/%3E%3Ccircle cx='80' cy='50' r='38' fill='%23ffffff' opacity='.3'/%3E%3Cpath d='M40 180 L120 70 L200 180 Z' fill='%23ffffff' opacity='.18'/%3E%3C/svg%3E" alt="视频《山野呼吸：三小时徒步实录》封面"></div>
+            <div class="ks-mini-body">
+              <h4>山野呼吸：三小时徒步实录</h4>
+              <p>无解说、无配乐，只有风穿过枝叶的声音。</p>
+              <div class="ks-mini-meta"><span>慢慢拍</span><span>7.8 万播放</span></div>
+            </div>
+          </article>
+          <article class="ks-mini-card">
+            <div class="ks-mini-thumb"><img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Cdefs%3E%3ClinearGradient id='m3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c3aed'/%3E%3Cstop offset='1' stop-color='%23f472b6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='180' fill='url(%23m3)'/%3E%3Crect x='110' y='50' width='100' height='70' rx='8' fill='%23ffffff' opacity='.28'/%3E%3Ccircle cx='60' cy='140' r='30' fill='%23ffffff' opacity='.2'/%3E%3C/svg%3E" alt="视频《剪辑台上的一百次重来》封面"></div>
+            <div class="ks-mini-body">
+              <h4>剪辑台上的一百次重来</h4>
+              <p>一支 60 秒短片背后，是 6 小时的时间线拉锯。</p>
+              <div class="ks-mini-meta"><span>剪手阿野</span><span>6.5 万播放</span></div>
+            </div>
+          </article>
+          <article class="ks-mini-card">
+            <div class="ks-mini-thumb"><img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Cdefs%3E%3ClinearGradient id='m4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231f2937'/%3E%3Cstop offset='1' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='180' fill='url(%23m4)'/%3E%3Cpath d='M160 40 L220 90 L160 140 L100 90 Z' fill='%23ffffff' opacity='.25'/%3E%3C/svg%3E" alt="视频《访谈：把喜欢的事做成日常》封面"></div>
+            <div class="ks-mini-body">
+              <h4>访谈：把喜欢的事做成日常</h4>
+              <p>和三位全职创作者聊聊，稳定输出的秘密是什么。</p>
+              <div class="ks-mini-meta"><span>编辑部</span><span>5.1 万播放</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门视频流 -->
+  <section class="ks-section" id="ks-videos">
+    <div class="ks-head">
+      <div class="ks-head-txt">
+        <h2>热门视频流</h2>
+        <p>社区正在看的内容，按题材筛选，找到你此刻想要的那一口爽快。</p>
+      </div>
+      <a class="ks-head-more" href="#ks-topics">进入专题企划</a>
+    </div>
+    <div class="ks-filter-bar" id="ks-filter-bar">
+      <button class="ks-chip is-active" data-filter="all">全部</button>
+      <button class="ks-chip" data-filter="日常">日常记录</button>
+      <button class="ks-chip" data-filter="技巧">实用技巧</button>
+      <button class="ks-chip" data-filter="户外">户外活动</button>
+      <button class="ks-chip" data-filter="访谈">人物访谈</button>
+    </div>
+    <div class="ks-video-grid" id="ks-video-grid">
+
+      <article class="ks-video-card" data-cat="户外">
+        <div class="ks-video-thumb">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Cdefs%3E%3ClinearGradient id='v1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f766e'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='180' fill='url(%23v1)'/%3E%3Cpath d='M0 150 L80 80 L160 140 L240 70 L320 130 L320 180 L0 180 Z' fill='%23ffffff' opacity='.22'/%3E%3Ccircle cx='270' cy='40' r='22' fill='%23fbbf24' opacity='.85'/%3E%3C/svg%3E" alt="视频《清晨五点出发，去山顶等一场日出》封面">
+          <span class="ks-thumb-tag">户外</span>
+          <span class="ks-dur">08:42</span>
+        </div>
+        <div class="ks-video-body">
+          <h3>清晨五点出发，去山顶等一场日出</h3>
+          <p>从摸黑上山到天光破云，全程一镜到底的记录。</p>
+          <div class="ks-video-author">
+            <span class="ks-avatar" style="background:#0f9d76">山</span>
+            <span>山野小满</span>
+          </div>
+          <div class="ks-video-actions">
+            <button class="ks-act-btn ks-like-btn" data-count="1284">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9C1 8.4 3 5 6.4 5c2 0 3.4 1.1 4.2 2.3h2.8C14.2 6.1 15.6 5 17.6 5 21 5 23 8.4 21.3 12 19 16.4 12 21 12 21z"/></svg>
+              <span class="ks-count">1284</span>
+            </button>
+            <button class="ks-act-btn ks-save-btn">
+              <svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg>
+              <span>收藏</span>
+            </button>
+            <button class="ks-act-btn ks-share-btn">
+              <svg viewBox="0 0 24 24"><path d="M14 4l7 8-7 8v-5c-5 0-8 1.6-10 5 0-7 3.6-11 10-11V4z"/></svg>
+              <span>分享</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="ks-video-card" data-cat="技巧">
+        <div class="ks-video-thumb">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Cdefs%3E%3ClinearGradient id='v2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23312e81'/%3E%3Cstop offset='1' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='180' fill='url(%23v2)'/%3E%3Crect x='40' y='55' width='240' height='6' rx='3' fill='%23ffffff' opacity='.5'/%3E%3Crect x='40' y='85' width='170' height='6' rx='3' fill='%23ffffff' opacity='.3'/%3E%3Crect x='40' y='115' width='200' height='6' rx='3' fill='%23ffffff' opacity='.22'/%3E%3Ccircle cx='260' cy='120' r='26' fill='%23fbbf24' opacity='.85'/%3E%3C/svg%3E" alt="视频《三个转场技巧，让节奏瞬间变爽》封面">
+          <span class="ks-thumb-tag">技巧</span>
+          <span class="ks-dur">06:15</span>
+        </div>
+        <div class="ks-video-body">
+          <h3>三个转场技巧，让节奏瞬间变爽</h3>
+          <p>卡点、遮罩、动作衔接，附完整时间线拆解。</p>
+          <div class="ks-video-author">
+            <span class="ks-avatar" style="background:#7c3aed">剪</span>
+            <span>剪手阿野</span>
+          </div>
+          <div class="ks-video-actions">
+            <button class="ks-act-btn ks-like-btn" data-count="964">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9C1 8.4 3 5 6.4 5c2 0 3.4 1.1 4.2 2.3h2.8C14.2 6.1 15.6 5 17.6 5 21 5 23 8.4 21.3 12 19 16.4 12 21 12 21z"/></svg>
+              <span class="ks-count">964</span>
+            </button>
+            <button class="ks-act-btn ks-save-btn">
+              <svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg>
+              <span>收藏</span>
+            </button>
+            <button class="ks-act-btn ks-share-btn">
+              <svg viewBox="0 0 24 24"><path d="M14 4l7 8-7 8v-5c-5 0-8 1.6-10 5 0-7 3.6-11 10-11V4z"/></svg>
+              <span>分享</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="ks-video-card" data-cat="日常">
+        <div class="ks-video-thumb">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Cdefs%3E%3ClinearGradient id='v3' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23b45309'/%3E%3Cstop offset='1' stop-color='%23fcd34d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='180' fill='url(%23v3)'/%3E%3Cellipse cx='160' cy='150' rx='110' ry='26' fill='%23ffffff' opacity='.25'/%3E%3Ccircle cx='120' cy='100' r='34' fill='%23ffffff' opacity='.4'/%3E%3Ccircle cx='200' cy='110' r='26' fill='%23ffffff' opacity='.3'/%3E%3C/svg%3E" alt="视频《一碗面出锅前的最后三十秒》封面">
+          <span class="ks-thumb-tag">日常</span>
+          <span class="ks-dur">03:28</span>
+        </div>
+        <div class="ks-video-body">
+          <h3>一碗面出锅前的最后三十秒</h3>
+          <p>汤在滚、面在跳，厨房里最治愈的声音合集。</p>
+          <div class="ks-video-author">
+            <span class="ks-avatar" style="background:#f97316">林</span>
+            <span>林见</span>
+          </div>
+          <div class="ks-video-actions">
+            <button class="ks-act-btn ks-like-btn" data-count="2150">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9C1 8.4 3 5 6.4 5c2 0 3.4 1.1 4.2 2.3h2.8C14.2 6.1 15.6 5 17.6 5 21 5 23 8.4 21.3 12 19 16.4 12 21 12 21z"/></svg>
+              <span class="ks-count">2150</span>
+            </button>
+            <button class="ks-act-btn ks-save-btn">
+              <svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg>
+              <span>收藏</span>
+            </button>
+            <button class="ks-act-btn ks-share-btn">
+              <svg viewBox="0 0 24 24"><path d="M14 4l7 8-7 8v-5c-5 0-8 1.6-10 5 0-7 3.6-11 10-11V4z"/></svg>
+              <span>分享</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="ks-video-card" data-cat="访谈">
+        <div class="ks-video-thumb">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Cdefs%3E%3ClinearGradient id='v4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231e293b'/%3E%3Cstop offset='1' stop-color='%23475569'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='180' fill='url(%23v4)'/%3E%3Ccircle cx='100' cy='90' r='30' fill='%23f97316' opacity='.8'/%3E%3Ccircle cx='220' cy='90' r='30' fill='%23ffffff' opacity='.35'/%3E%3Crect x='150' y='60' width='22' height='60' rx='11' fill='%23ffffff' opacity='.25'/%3E%3C/svg%3E" alt="视频《访谈：从零到一万粉，我踩过的坑》封面">
+          <span class="ks-thumb-tag">访谈</span>
+          <span class="ks-dur">14:06</span>
+        </div>
+        <div class="ks-video-body">
+          <h3>访谈：从零到一万粉，我踩过的坑</h3>
+          <p>四位新人创作者复盘起步期最难熬的三个月。</p>
+          <div class="ks-video-author">
+            <span class="ks-avatar" style="background:#1e293b">编</span>
+            <span>编辑部</span>
+          </div>
+          <div class="ks-video-actions">
+            <button class="ks-act-btn ks-like-btn" data-count="742">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9C1 8.4 3 5 6.4 5c2 0 3.4 1.1 4.2 2.3h2.8C14.2 6.1 15.6 5 17.6 5 21 5 23 8.4 21.3 12 19 16.4 12 21 12 21z"/></svg>
+              <span class="ks-count">742</span>
+            </button>
+            <button class="ks-act-btn ks-save-btn">
+              <svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg>
+              <span>收藏</span>
+            </button>
+            <button class="ks-act-btn ks-share-btn">
+              <svg viewBox="0 0 24 24"><path d="M14 4l7 8-7 8v-5c-5 0-8 1.6-10 5 0-7 3.6-11 10-11V4z"/></svg>
+              <span>分享</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="ks-video-card" data-cat="日常">
+        <div class="ks-video-thumb">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Cdefs%3E%3ClinearGradient id='v5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230ea5e9'/%3E%3Cstop offset='1' stop-color='%23a5f3fc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='180' fill='url(%23v5)'/%3E%3Cpath d='M0 120 Q80 90 160 120 T320 110 L320 180 L0 180 Z' fill='%23ffffff' opacity='.3'/%3E%3Ccircle cx='60' cy='50' r='24' fill='%23ffffff' opacity='.55'/%3E%3C/svg%3E" alt="视频《雨天在家：把房间整理成喜欢的样子》封面">
+          <span class="ks-thumb-tag">日常</span>
+          <span class="ks-dur">09:50</span>
+        </div>
+        <div class="ks-video-body">
+          <h3>雨天在家：把房间整理成喜欢的样子</h3>
+          <p>收纳、换季、摆件，一个下午的治愈系整理。</p>
+          <div class="ks-video-author">
+            <span class="ks-avatar" style="background:#0ea5e9">慢</span>
+            <span>慢慢拍</span>
+          </div>
+          <div class="ks-video-actions">
+            <button class="ks-act-btn ks-like-btn" data-count="1633">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9C1 8.4 3 5 6.4 5c2 0 3.4 1.1 4.2 2.3h2.8C14.2 6.1 15.6 5 17.6 5 21 5 23 8.4 21.3 12 19 16.4 12 21 12 21z"/></svg>
+              <span class="ks-count">1633</span>
+            </button>
+            <button class="ks-act-btn ks-save-btn">
+              <svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg>
+              <span>收藏</span>
+            </button>
+            <button class="ks-act-btn ks-share-btn">
+              <svg viewBox="0 0 24 24"><path d="M14 4l7 8-7 8v-5c-5 0-8 1.6-10 5 0-7 3.6-11 10-11V4z"/></svg>
+              <span>分享</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="ks-video-card" data-cat="户外">
+        <div class="ks-video-thumb">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Cdefs%3E%3ClinearGradient id='v6' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%2314532d'/%3E%3Cstop offset='1' stop-color='%2384cc16'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='180' fill='url(%23v6)'/%3E%3Cpath d='M30 180 L100 60 L170 180 Z' fill='%23ffffff' opacity='.2'/%3E%3Cpath d='M150 180 L230 40 L310 180 Z' fill='%23ffffff' opacity='.14'/%3E%3Ccircle cx='70' cy='50' r='20' fill='%23fde68a' opacity='.9'/%3E%3C/svg%3E" alt="视频《溪边露营两天一夜，装备清单全公开》封面">
+          <span class="ks-thumb-tag">户外</span>
+          <span class="ks-dur">21:30</span>
+        </div>
+        <div class="ks-video-body">
+          <h3>溪边露营两天一夜，装备清单全公开</h3>
+          <p>从搭帐到收营，新手也能照着抄的露营攻略。</p>
+          <div class="ks-video-author">
+            <span class="ks-avatar" style="background:#15803d">野</span>
+            <span>野路老周</span>
+          </div>
+          <div class="ks-video-actions">
+            <button class="ks-act-btn ks-like-btn" data-count="1890">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9C1 8.4 3 5 6.4 5c2 0 3.4 1.1 4.2 2.3h2.8C14.2 6.1 15.6 5 17.6 5 21 5 23 8.4 21.3 12 19 16.4 12 21 12 21z"/></svg>
+              <span class="ks-count">1890</span>
+            </button>
+            <button class="ks-act-btn ks-save-btn">
+              <svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></svg>
+              <span>收藏</span>
+            </button>
+            <button class="ks-act-btn ks-share-btn">
+              <svg viewBox="0 0 24 24"><path d="M14 4l7 8-7 8v-5c-5 0-8 1.6-10 5 0-7 3.6-11 10-11V4z"/></svg>
+              <span>分享</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="ks-section-alt" id="ks-topics">
+    <div class="ks-inner">
+      <div class="ks-head">
+        <div class="ks-head-txt">
+          <h2>专题企划</h2>
+          <p>由快爽官方发起、面向全社区的主题系列，持续更新中，欢迎报名参与。</p>
+        </div>
+        <a class="ks-head-more" href="#ks-contact">投稿入口</a>
+      </div>
+      <div class="ks-topic-grid">
+        <article class="ks-topic-card">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 430'%3E%3Cdefs%3E%3ClinearGradient id='t1' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23f97316'/%3E%3Cstop offset='1' stop-color='%237c2d12'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='430' fill='url(%23t1)'/%3E%3Ccircle cx='280' cy='80' r='70' fill='%23fbbf24' opacity='.45'/%3E%3Cpath d='M0 330 L90 260 L180 330 L270 250 L360 320 L360 430 L0 430 Z' fill='%23ffffff' opacity='.16'/%3E%3C/svg%3E" alt="专题《爽感一秒：冬季短视频征集》封面">
+          <div class="ks-topic-body">
+            <span>TOPIC 01</span>
+            <h3>爽感一秒：冬季短视频征集</h3>
+            <p>用一个镜头，讲清楚让你瞬间畅快的那一秒。</p>
+            <span class="ks-topic-state">征集中 · 12 月 20 日截止</span>
+          </div>
+        </article>
+        <article class="ks-topic-card">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 430'%3E%3Cdefs%3E%3ClinearGradient id='t2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%230f766e'/%3E%3Cstop offset='1' stop-color='%23065f46'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='430' fill='url(%23t2)'/%3E%3Cpath d='M40 430 L120 200 L200 430 Z' fill='%23ffffff' opacity='.15'/%3E%3Cpath d='M180 430 L260 160 L340 430 Z' fill='%23ffffff' opacity='.1'/%3E%3Ccircle cx='90' cy='90' r='34' fill='%23a7f3d0' opacity='.7'/%3E%3C/svg%3E" alt="专题《山野呼吸：户外影像记录计划》封面">
+          <div class="ks-topic-body">
+            <span>TOPIC 02</span>
+            <h3>山野呼吸：户外影像记录计划</h3>
+            <p>走进山里、溪边与营地，记录自然里的呼吸节奏。</p>
+            <span class="ks-topic-state">更新至第 5 期</span>
+          </div>
+        </article>
+        <article class="ks-topic-card">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 430'%3E%3Cdefs%3E%3ClinearGradient id='t3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234c1d95'/%3E%3Cstop offset='1' stop-color='%23db2777'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='430' fill='url(%23t3)'/%3E%3Crect x='60' y='120' width='240' height='130' rx='14' fill='%23ffffff' opacity='.16'/%3E%3Ccircle cx='180' cy='185' r='30' fill='%23fbbf24' opacity='.9'/%3E%3C/svg%3E" alt="专题《剪辑台上：创作者幕后纪实》封面">
+          <div class="ks-topic-body">
+            <span>TOPIC 03</span>
+            <h3>剪辑台上：创作者幕后纪实</h3>
+            <p>那些没被剪进成片的废片，往往才是故事本身。</p>
+            <span class="ks-topic-state">已完结 · 共 8 集</span>
+          </div>
+        </article>
+        <article class="ks-topic-card">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 430'%3E%3Cdefs%3E%3ClinearGradient id='t4' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%231e3a8a'/%3E%3Cstop offset='1' stop-color='%230ea5e9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='360' height='430' fill='url(%23t4)'/%3E%3Ccircle cx='100' cy='120' r='60' fill='%23ffffff' opacity='.16'/%3E%3Ccircle cx='260' cy='260' r='40' fill='%23fbbf24' opacity='.5'/%3E%3Cpath d='M0 360 L120 300 L240 370 L360 310 L360 430 L0 430 Z' fill='%23ffffff' opacity='.12'/%3E%3C/svg%3E" alt="专题《城市漫游者：镜头里的街角故事》封面">
+          <div class="ks-topic-body">
+            <span>TOPIC 04</span>
+            <h3>城市漫游者：镜头里的街角故事</h3>
+            <p>用步行速度看城市，寻找被忽略的日常细节。</p>
+            <span class="ks-topic-state">征集中 · 新投稿 42 条</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者 -->
+  <section class="ks-section" id="ks-creators">
+    <div class="ks-head">
+      <div class="ks-head-txt">
+        <h2>创作者矩阵</h2>
+        <p>快爽社区里持续输出的四位创作者，他们让「爽感」有了具体的模样。</p>
+      </div>
+      <a class="ks-head-more" href="#ks-news">查看企业动态</a>
+    </div>
+    <div class="ks-creator-grid">
+      <article class="ks-creator-card">
+        <div class="ks-creator-avatar" style="background:linear-gradient(135deg,#f97316,#fbbf24)">阿</div>
+        <h3>阿速</h3>
+        <p class="ks-creator-field">城市探索 · 运动影像</p>
+        <p>喜欢在夜里骑车，用运动相机记录城市的另一面。作品节奏明快，擅长把速度感做成情绪。</p>
+        <div class="ks-creator-stats">
+          <div><b>86</b>作品</div>
+          <div><b>12.4万</b>粉丝</div>
+        </div>
+      </article>
+      <article class="ks-creator-card">
+        <div class="ks-creator-avatar" style="background:linear-gradient(135deg,#0f9d76,#84cc16)">林</div>
+        <h3>林见</h3>
+        <p class="ks-creator-field">美食烹饪 · 日常记录</p>
+        <p>厨房里的声音收集者，坚持用一镜到底拍完每道菜，认为烹饪本身就是一次完整的叙事。</p>
+        <div class="ks-creator-stats">
+          <div><b>132</b>作品</div>
+          <div><b>18.7万</b>粉丝</div>
+        </div>
+      </article>
+      <article class="ks-creator-card">
+        <div class="ks-creator-avatar" style="background:linear-gradient(135deg,#7c3aed,#f472b6)">剪</div>
+        <h3>剪手阿野</h3>
+        <p class="ks-creator-field">技巧干货 · 创作幕后</p>
+        <p>剪辑师出身，擅长把复杂的时间线拆成易懂的步骤，教程系列被许多新人当作入门参考。</p>
+        <div class="ks-creator-stats">
+          <div><b>64</b>作品</div>
+          <div><b>9.6万</b>粉丝</div>
+        </div>
+      </article>
+      <article class="ks-creator-card">
+        <div class="ks-creator-avatar" style="background:linear-gradient(135deg,#0ea5e9,#a5f3fc)">慢</div>
+        <h3>慢慢拍</h3>
+        <p class="ks-creator-field">治愈影像 · 慢生活</p>
+        <p>把镜头对准日常里不被注意的角落，作品安静克制，被不少观众称为「下班后的解压频道」。</p>
+        <div class="ks-creator-stats">
+          <div><b>97</b>作品</div>
+          <div><b>15.2万</b>粉丝</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 随笔 -->
+  <section class="ks-section-alt" id="ks-stories">
+    <div class="ks-inner">
+      <div class="ks-head">
+        <div class="ks-head-txt">
+          <h2>故事与随笔</h2>
+          <p>镜头之外，创作者的文字记录。它们不一定完整，但足够真实。</p>
+        </div>
+      </div>
+      <div class="ks-story-grid">
+        <article class="ks-story-main">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 420'%3E%3Cdefs%3E%3ClinearGradient id='s1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23111827'/%3E%3Cstop offset='.6' stop-color='%23374151'/%3E%3Cstop offset='1' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='420' fill='url(%23s1)'/%3E%3Ccircle cx='500' cy='120' r='80' fill='%23fbbf24' opacity='.35'/%3E%3Cpath d='M0 300 Q160 240 320 300 T640 280 L640 420 L0 420 Z' fill='%23ffffff' opacity='.1'/%3E%3Crect x='80' y='90' width='120' height='80' rx='10' fill='%23ffffff' opacity='.14'/%3E%3C/svg%3E" alt="随笔《拍完第 100 条视频后，我终于不再焦虑》配图">
+          <div class="ks-story-main-body">
+            <h3>拍完第 100 条视频后，我终于不再焦虑</h3>
+            <p>从追求每一条都爆，到接受大部分作品平平无奇，这条路我走了整整一年。写下这些，是想告诉正在起步的你，慢一点也没关系。</p>
+          </div>
+        </article>
+        <div class="ks-story-list">
+          <article class="ks-story-item">
+            <span class="ks-story-num">01</span>
+            <div>
+              <h4>关于「爽感」，我和三位观众聊了聊</h4>
+              <p>有人说是解压，有人说是共鸣，还有人只是喜欢画面里的风。答案比想象中更多元。</p>
+            </div>
+          </article>
+          <article class="ks-story-item">
+            <span class="ks-story-num">02</span>
+            <div>
+              <h4>一支 60 秒短片，我拍了 6 小时</h4>
+              <p>时间线被推翻四次，最后留下的版本反而最简单。创作有时候就是做减法。</p>
+            </div>
+          </article>
+          <article class="ks-story-item">
+            <span class="ks-story-num">03</span>
+            <div>
+              <h4>在快爽社区，我遇到了第一批观众</h4>
+              <p>他们会在评论区指出我的口误，也会记得我上一条视频里的猫叫什么名字。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="ks-section" id="ks-reviews">
+    <div class="ks-head">
+      <div class="ks-head-txt">
+        <h2>社区口碑</h2>
+        <p>来自观众与创作者的真实反馈，是快爽持续运营下去的动力。</p>
+      </div>
+    </div>
+    <div class="ks-review-track">
+      <article class="ks-review">
+        <span class="ks-review-quote">“</span>
+        <div class="ks-stars">★★★★★</div>
+        <p>在快爽看了大半年的剪辑教程，从完全不会到能独立完成一条短片，阿野的系列真的救了我。官网的内容整理得很清楚，找起来不费劲。</p>
+        <div class="ks-review-who">
+          <span class="ks-avatar" style="background:#f97316">小</span>
+          <div><b>小满同学</b><small>学生创作者</small></div>
+        </div>
+      </article>
+      <article class="ks-review">
+        <span class="ks-review-quote">“</span>
+        <div class="ks-stars">★★★★★</div>
+        <p>作为一个拍摄户外内容的人，我最看重的是平台对原创的尊重。快爽的授权流程说得很明白，这点让我愿意长期在这里更新。</p>
+        <div class="ks-review-who">
+          <span class="ks-avatar" style="background:#15803d">野</span>
+          <div><b>野路老周</b><small>户外创作者</small></div>
+        </div>
+      </article>
+      <article class="ks-review">
+        <span class="ks-review-quote">“</span>
+        <div class="ks-stars">★★★★☆</div>
+        <p>下班路上喜欢刷一会儿美食区，林见的视频有种让人安静下来的力量。希望以后专题可以再多一些厨房里的长镜头。</p>
+        <div class="ks-review-who">
+          <span class="ks-avatar" style="background:#b45309">阿</span>
+          <div><b>阿栗</b><small>普通观众</small></div>
+        </div>
+      </article>
+      <article class="ks-review">
+        <span class="ks-review-quote">“</span>
+        <div class="ks-stars">★★★★★</div>
+        <p>我们品牌和快爽合作过一次专题短片，从策划到成片的沟通都很顺畅，最后的口碑反馈也超出预期。是一个值得信赖的内容合作方。</p>
+        <div class="ks-review-who">
+          <span class="ks-avatar" style="background:#1e293b">品</span>
+          <div><b>陈女士</b><small>品牌市场负责人</small></div>
+        </div>
+      </article>
+      <article class="ks-review">
+        <span class="ks-review-quote">“</span>
+        <div class="ks-stars">★★★★★</div>
+        <p>投稿入口很好找，提交之后还有编辑回复，这一点挺意外的。作为一个新人，被认真对待的感觉很重要。</p>
+        <div class="ks-review-who">
+          <span class="ks-avatar" style="background:#0ea5e9">N</span>
+          <div><b>Nina</b><small>新人创作者</small></div>
+        </div>
+      </article>
+      <article class="ks-review">
+        <span class="ks-review-quote">“</span>
+        <div class="ks-stars">★★★★☆</div>
+        <p>喜欢慢慢拍的治愈系列，画面干净，音乐也不吵。官网首页的推荐位更新挺勤快，每周都有新东西可看。</p>
+        <div class="ks-review-who">
+          <span class="ks-avatar" style="background:#7c3aed">木</span>
+          <div><b>木木</b><small>社区用户</small></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 动态 & FAQ -->
+  <section class="ks-section-alt" id="ks-news">
+    <div class="ks-inner">
+      <div class="ks-two-col">
+        <div>
+          <div class="ks-head-txt" style="margin-bottom:26px">
+            <h2>企业动态</h2>
+            <p>快爽官方发布与内容生态更新，持续运营中的每一个节点。</p>
+          </div>
+          <div class="ks-timeline">
+            <div class="ks-tl-item">
+              <time>2026-11-18</time>
+              <h4>「爽感一秒」冬季征集正式开启</h4>
+              <p>面向全社区征集 60 秒以内短片，主题围绕冬季里的畅快瞬间，12 月 20 日截止。</p>
+            </div>
+            <div class="ks-tl-item">
+              <time>2026-11-12</time>
+              <h4>创作者公开课第 12 期上线</h4>
+              <p>本期聚焦上传流程与调色思路，由剪手阿野主讲，已在企业官方频道发布。</p>
+            </div>
+            <div class="ks-tl-item">
+              <time>2026-11-05</time>
+              <h4>内容生态合作计划新增三家伙伴</h4>
+              <p>快爽与三家影像器材品牌达成联合企划合作，将共同推出设备测评系列内容。</p>
+            </div>
+            <div class="ks-tl-item">
+              <time>2026-10-28</time>
+              <h4>品牌故事纪录片《持续运营》上线</h4>
+              <p>记录快爽团队一年间的选题会、拍摄现场与社区活动，全长 42 分钟。</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="ks-head-txt" style="margin-bottom:26px">
+            <h2>常见问题</h2>
+            <p>关于投稿、合作与版权，你可能想知道的事情。</p>
+          </div>
+          <div class="ks-faq">
+            <details open>
+              <summary>如何向快爽投稿？</summary>
+              <p>点击页面中的「投稿入口」按钮，填写作品信息与联系方式即可。编辑部会在五个工作日内回复，通过后会安排上线并为作品配置推荐位。</p>
+            </details>
+            <details>
+              <summary>平台对原创与版权有什么要求？</summary>
+              <p>所有投稿内容需为创作者原创或已取得完整授权。素材、音乐、字体与肖像均需确认可用，涉及他人出镜的内容需提供同意证明。</p>
+            </details>
+            <details>
+              <summary>品牌合作可以对接哪些形式？</summary>
+              <p>支持专题企划、系列短片联合出品、创作者共创与线下活动影像记录等形式。可通过联系我们页的商务邮箱沟通具体需求。</p>
+            </details>
+            <details>
+              <summary>创作者公开课在哪里查看？</summary>
+              <p>公开课内容会在企业官方频道与专题企划区同步发布，每期配有文字版攻略，方便反复查阅。</p>
+            </details>
+            <details>
+              <summary>作品上线后可以修改吗？</summary>
+              <p>可以。上线后如需调整标题、简介或封面，可通过站内反馈提交申请，编辑部确认后会协助更新。</p>
+            </details>
+            <details>
+              <summary>社区对内容有哪些规范？</summary>
+              <p>快爽倡导真实、友善的交流氛围，禁止搬运、抄袭与恶意引战行为。违规内容会先下架再沟通，严重者将限制投稿权限。</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 合作 -->
+  <section class="ks-section" id="ks-partners">
+    <div class="ks-head">
+      <div class="ks-head-txt">
+        <h2>合作伙伴</h2>
+        <p>与快爽一同构建内容生态的合作伙伴，覆盖器材、影像与生活方式领域。</p>
+      </div>
+    </div>
+    <div class="ks-partner-row">
+      <span class="ks-partner">光野影像</span>
+      <span class="ks-partner">山行装备</span>
+      <span class="ks-partner">慢调咖啡</span>
+      <span class="ks-partner">纸间书店</span>
+      <span class="ks-partner">帧率实验室</span>
+      <span class="ks-partner">城市漫游计划</span>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="ks-section" id="ks-contact">
+    <div class="ks-contact-box">
+      <div>
+        <h2>联系我们，一起做出好东西</h2>
+        <p>无论是投稿、合作还是反馈，快爽都欢迎你直接开口。官方网站的每一处入口，都通向真实的人。</p>
+        <div class="ks-contact-actions">
+          <button class="ks-btn ks-btn-light" id="ks-open-submit">投稿入口</button>
+          <button class="ks-btn ks-btn-outline" id="ks-open-feedback">意见反馈</button>
+        </div>
+      </div>
+      <ul class="ks-contact-list">
+        <li><span>商务合作</span>partner@kuaishuang.example</li>
+        <li><span>内容投稿</span>creator@kuaishuang.example</li>
+        <li><span>媒体联络</span>press@kuaishuang.example</li>
+        <li><span>工作时间</span>周一至周五 10:00 - 19:00</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ks-footer">
+  <div class="ks-footer-inner">
+    <div class="ks-footer-top">
+      <div class="ks-footer-brand">
+        <strong>快爽 · 官方网站</strong>
+        <p>快爽是持续运营的视频内容品牌，深耕原创影像与创作者社区，致力于为用户提供高品质、值得信赖的观看体验。品牌故事、企业动态与官方发布均在本站同步更新。</p>
+      </div>
+      <div>
+        <h5>内容导航</h5>
+        <ul>
+          <li><a href="#ks-focus">视频焦点</a></li>
+          <li><a href="#ks-videos">热门视频流</a></li>
+          <li><a href="#ks-topics">专题企划</a></li>
+          <li><a href="#ks-stories">故事与随笔</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>关于快爽</h5>
+        <ul>
+          <li><a href="#ks-about">品牌故事</a></li>
+          <li><a href="#ks-creators">创作者矩阵</a></li>
+          <li><a href="#ks-news">企业动态</a></li>
+          <li><a href="#ks-reviews">社区口碑</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>支持与帮助</h5>
+        <ul>
+          <li><a href="#ks-news">常见问题</a></li>
+          <li><a href="#ks-partners">合作伙伴</a></li>
+          <li><a href="#ks-contact">联系我们</a></li>
+          <li><a href="#ks-contact">投稿指南</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ks-footer-bottom">
+      <span>© 2026 快爽官方网站 · 版权所有 · 持续运营中</span>
+      <span>原创内容 · 正版授权 · 高清品质</span>
+    </div>
+  </div>
+</footer>
+
+<button class="ks-backtop" id="ks-backtop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24"><path d="M12 5l7 7-1.4 1.4L13 8.8V19h-2V8.8l-4.6 4.6L5 12z"/></svg>
+</button>
+
+<div class="ks-toast" id="ks-toast">已复制分享链接</div>
+
+<div class="ks-modal-mask" id="ks-submit-modal">
+  <div class="ks-modal">
+    <button class="ks-modal-close" data-close="ks-submit-modal" aria-label="关闭">×</button>
+    <h3>投稿入口</h3>
+    <p>请填写作品基本信息，编辑部会在五个工作日内与你联系。</p>
+    <div class="ks-modal-field">
+      <label for="ks-submit-title">作品标题</label>
+      <input type="text" id="ks-submit-title" placeholder="例如：清晨五点出发，去山顶等一场日出">
+    </div>
+    <div class="ks-modal-field">
+      <label for="ks-submit-contact">联系方式</label>
+      <input type="text" id="ks-submit-contact" placeholder="邮箱或手机号">
+    </div>
+    <div class="ks-modal-field">
+      <label for="ks-submit-desc">作品简介</label>
+      <textarea id="ks-submit-desc" rows="3" placeholder="简单介绍你的作品主题与创作思路"></textarea>
+    </div>
+    <button class="ks-modal-submit" id="ks-submit-confirm">提交投稿信息</button>
+  </div>
+</div>
+
+<div class="ks-modal-mask" id="ks-feedback-modal">
+  <div class="ks-modal">
+    <button class="ks-modal-close" data-close="ks-feedback-modal" aria-label="关闭">×</button>
+    <h3>意见反馈</h3>
+    <p>你的每一条反馈，都会成为快爽继续打磨产品的依据。</p>
+    <div class="ks-modal-field">
+      <label for="ks-feedback-text">反馈内容</label>
+      <textarea id="ks-feedback-text" rows="4" placeholder="请描述你遇到的问题或建议"></textarea>
+    </div>
+    <button class="ks-modal-submit" id="ks-feedback-confirm">提交反馈</button>
+  </div>
+</div>
+
+<div class="ks-modal-mask" id="ks-author-modal">
+  <div class="ks-modal">
+    <button class="ks-modal-close" data-close="ks-author-modal" aria-label="关闭">×</button>
+    <h3>关于这位创作者</h3>
+    <p>快爽社区的创作者均经过内容规范审核。点击关注后，你可以在企业动态与专题区第一时间看到他们的新作品与幕后记录。</p>
+    <button class="ks-modal-submit" id="ks-follow-confirm">关注创作者</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---------- 移动端导航 ---------- */
+  var menuBtn = document.getElementById('ks-menu-btn');
+  var nav = document.getElementById('ks-nav');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') {
+        nav.classList.remove('is-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ---------- Toast ---------- */
+  var toast = document.getElementById('ks-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('is-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('is-show'); }, 2200);
+  }
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchForm = document.getElementById('ks-search-form');
+  var searchInput = document.getElementById('ks-search-input');
+  if (searchForm && searchInput) {
+    searchForm.addEventListener('submit', function(){
+      var kw = searchInput.value.trim();
+      if (!kw) {
+        showToast('请输入关键词再搜索');
+        searchInput.focus();
+        return;
+      }
+      showToast('正在为你检索「' + kw + '」相关内容');
+    });
+  }
+
+  /* ---------- 标签筛选 ---------- */
+  var filterBar = document.getElementById('ks-filter-bar');
+  var videoGrid = document.getElementById('ks-video-grid');
+  if (filterBar && videoGrid) {
+    filterBar.addEventListener('click', function(e){
+      var btn = e.target.closest('.ks-chip');
+      if (!btn) return;
+      var filter = btn.getAttribute('data-filter');
+      Array.prototype.forEach.call(filterBar.querySelectorAll('.ks-chip'), function(c){
+        c.classList.toggle('is-active', c === btn);
+      });
+      var cards = videoGrid.querySelectorAll('.ks-video-card');
+      var shown = 0;
+      Array.prototype.forEach.call(cards, function(card){
+        var cat = card.getAttribute('data-cat');
+        var ok = (filter === 'all' || cat === filter);
+        card.style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+      showToast(filter === 'all' ? '已展示全部题材' : '已筛选出 ' + shown + ' 条相关内容');
+    });
+  }
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  if (videoGrid) {
+    videoGrid.addEventListener('click', function(e){
+      var likeBtn = e.target.closest('.ks-like-btn');
+      if (likeBtn) {
+        var countEl = likeBtn.querySelector('.ks-count');
+        var base = parseInt(likeBtn.getAttribute('data-count'), 10) || 0;
+        var liked = likeBtn.classList.toggle('is-liked');
+        var num = liked ? (base + 1) : base;
+        countEl.textContent = num;
+        showToast(liked ? '已点赞，感谢支持' : '已取消点赞');
+        return;
+      }
+      var saveBtn = e.target.closest('.ks-save-btn');
+      if (saveBtn) {
+        var saved = saveBtn.classList.toggle('is-saved');
+        var label = saveBtn.querySelector('span');
+        if (label) label.textContent = saved ? '已收藏' : '收藏';
+        showToast(saved ? '已加入收藏夹' : '已取消收藏');
+        return;
+      }
+      var shareBtn = e.target.closest('.ks-share-btn');
+      if (shareBtn) {
+        var shareText = '来自快爽官方网站的内容分享';
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(shareText).then(function(){
+            showToast('分享文案已复制到剪贴板');
+          }).catch(function(){
+            showToast('长按页面链接即可转发给朋友');
+          });
+        } else {
+          showToast('长按页面链接即可转发给朋友');
+        }
+        return;
+      }
+      var card = e.target.closest('.ks-video-card');
+      if (card) {
+        var authorName = card.querySelector('.ks-video-author span:last-child');
+        var name = authorName ? authorName.textContent : '创作者';
+        openModal('ks-author-modal');
+        var modalTitle = document.querySelector('#ks-author-modal h3');
+        if (modalTitle) modalTitle.textContent = '关于创作者 · ' + name;
+      }
+    });
+  }
+
+  /* ---------- 弹窗 ---------- */
+  function openModal(id){
+    var m = document.getElementById(id);
+    if (m) m.classList.add('is-show');
+  }
+  function closeModal(id){
+    var m = document.getElementById(id);
+    if (m) m.classList.remove('is-show');
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-close]'), function(btn){
+    btn.addEventListener('click', function(){
+      closeModal(btn.getAttribute('data-close'));
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.ks-modal-mask'), function(mask){
+    mask.addEventListener('click', function(e){
+      if (e.target === mask) mask.classList.remove('is-show');
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      Array.prototype.forEach.call(document.querySelectorAll('.ks-modal-mask.is-show'), function(m){
+        m.classList.remove('is-show');
+      });
+    }
+  });
+
+  var openSubmit = document.getElementById('ks-open-submit');
+  var openFeedback = document.getElementById('ks-open-feedback');
+  if (openSubmit) openSubmit.addEventListener('click', function(){ openModal('ks-submit-modal'); });
+  if (openFeedback) openFeedback.addEventListener('click', function(){ openModal('ks-feedback-modal'); });
+
+  var submitConfirm = document.getElementById('ks-submit-confirm');
+  if (submitConfirm) {
+    submitConfirm.addEventListener('click', function(){
+      var t = document.getElementById('ks-submit-title');
+      if (t && !t.value.trim()) {
+        showToast('请先填写作品标题');
+        t.focus();
+        return;
+      }
+      closeModal('ks-submit-modal');
+      showToast('投稿信息已提交，编辑部会尽快联系你');
+      if (t) t.value = '';
+      var c = document.getElementById('ks-submit-contact');
+      var d = document.getElementById('ks-submit-desc');
+      if (c) c.value = '';
+      if (d) d.value = '';
+    });
+  }
+
+  var feedbackConfirm = document.getElementById('ks-feedback-confirm');
+  if (feedbackConfirm) {
+    feedbackConfirm.addEventListener('click', function(){
+      var f = document.getElementById('ks-feedback-text');
+      if (f && !f.value.trim()) {
+        showToast('请先填写反馈内容');
+        f.focus();
+        return;
+      }
+      closeModal('ks-feedback-modal');
+      showToast('反馈已收到，感谢你的建议');
+      if (f) f.value = '';
+    });
+  }
+
+  var followConfirm = document.getElementById('ks-follow-confirm');
+  if (followConfirm) {
+    followConfirm.addEventListener('click', function(){
+      closeModal('ks-author-modal');
+      showToast('已关注该创作者');
+    });
+  }
+
+  /* ---------- 回到顶部 ---------- */
+  var backtop = document.getElementById('ks-backtop');
+  if (backtop) {
+    window.addEventListener('scroll', function(){
+      if (window.scrollY > 500) backtop.classList.add('is-show');
+      else backtop.classList.remove('is-show');
+    }, { passive: true });
+    backtop.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ---------- 数字滚动 ---------- */
+  var statEls = document.querySelectorAll('.ks-hero-stats div strong');
+  function animateNumber(el){
+    var raw = el.textContent.trim();
+    var target = parseFloat(raw.replace(/[^\d.]/g, ''));
+    if (!target || isNaN(target)) return;
+    var isWan = raw.indexOf('万') > -1;
+    var hasPlus = raw.indexOf('+') > -1;
+    var isPct = raw.indexOf('%') > -1;
+    var start = 0;
+    var startTime = null;
+    function step(ts){
+      if (!startTime) startTime = ts;
+      var p = Math.min((ts - startTime) / 1100, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = Math.round(start + (target - start) * eased);
+      el.textContent = val + (isWan ? '万' : '') + (hasPlus ? '+' : '') + (isPct ? '%' : '');
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if ('IntersectionObserver' in window && statEls.length) {
+    var statObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) {
+          animateNumber(en.target);
+          statObs.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    Array.prototype.forEach.call(statEls, function(el){ statObs.observe(el); });
+  }
+
+  /* ---------- 卡片入场 ---------- */
+  var revealEls = document.querySelectorAll('.ks-video-card, .ks-topic-card, .ks-creator-card, .ks-review, .ks-story-item');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    Array.prototype.forEach.call(revealEls, function(el){
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(18px)';
+      el.style.transition = 'opacity .5s ease, transform .5s ease';
+    });
+    var revealObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) {
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'translateY(0)';
+          revealObs.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    Array.prototype.forEach.call(revealEls, function(el){ revealObs.observe(el); });
+  }
+
+})();
+</script>
+</body>
+  </html>
